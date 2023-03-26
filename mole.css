@@ -1,0 +1,66 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: aqua;
+}
+
+.score {
+    font-size: 25px;
+    margin-bottom: 1em;
+}
+
+
+.topBar {
+    margin-bottom: 5px;
+    width: 600px;
+    height: 100px;
+    text-align: center;
+}
+
+.game {
+    background-color: lightgreen;
+    border: 5px solid black;
+    margin: 5;
+    height: 600px;
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 70px;
+}
+
+.hole { 
+    margin: 5px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hole .mole {
+    width: 82.5%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    animation: rise .3s ease-out;
+}
+
+@keyframes rise {
+    0%{
+        transform: translateX(-50%) translateY( 100%);
+    }
+    100%{
+        transform: translateX(-50%) translateY( 0%);
+    }
+}
+
+.start-btn[disabled] {
+    font-size: 30px;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
